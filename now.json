@@ -1,4 +1,4 @@
 {
   "version": 2,
-  "routes": [{ "src": "/(.*)", "dest": "/about" }]
+  "routes": [{ "src": "/about", "dest": "/" }]
 }
