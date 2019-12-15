@@ -1,55 +1,60 @@
 <template>
   <div>
-    <nuxt />
+    <appHead />
+    <div id="maincnt" class="mainCont transition-small">
+      <nuxt />
+    </div>
   </div>
 </template>
 
+<script>
+import appHead from "~/components/appHead.vue";
+
+export default {
+  components: {
+    appHead
+  }
+};
+</script>
+
 <style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+.mainCont {
+  margin-left: 240px;
+}
+.noMargin {
+  margin-left: 0px !important;
+}
+.w-drawer {
+  width: 240px;
+}
+.transform-x-0 {
+  transform: translateX(0%);
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
+.transform-x-100 {
+  transform: translateX(-100%);
+}
+.transition-small {
+  transition: 0.3s ease-in-out;
+}
+.z-1 {
+  z-index: -1;
+}
+.min-nav span {
+  display: none;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.min-nav {
+  padding: 20px;
+}
+.main-min-cnt {
+  margin-left: 70px;
+}
+.w-drawer-min {
+  width: auto;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.noAnimation {
+  transition: none;
 }
 </style>
