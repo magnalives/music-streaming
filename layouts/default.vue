@@ -18,6 +18,10 @@ export default {
 </script>
 
 <style>
+a {
+  text-decoration: none;
+  color: #000;
+}
 .mainCont {
   margin-left: 240px;
 }
