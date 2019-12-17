@@ -1,14 +1,14 @@
 <template>
   <div>
     <appHead />
-    <div id="maincnt" class="mainCont transition-small">
+    <div id="maincnt" class="mainCont transition-small bg-light-gray">
       <nuxt />
     </div>
   </div>
 </template>
 
 <script>
-import appHead from "~/components/appHead.vue";
+import appHead from "~/components/header/appHead.vue";
 
 export default {
   components: {
@@ -18,12 +18,28 @@ export default {
 </script>
 
 <style>
+#navSlider {
+  top: 50px;
+}
+#collapse-menu {
+  width: 240px;
+}
+.bg-light-gray {
+  background-color: #f8f8f8;
+}
+.text-dark-blue {
+  color: #040e45;
+}
+.text-light-blue {
+  color: #bec5d2;
+}
 a {
   text-decoration: none;
   color: #000;
 }
 .mainCont {
   margin-left: 240px;
+  margin-top: 77px;
 }
 .noMargin {
   margin-left: 0px !important;
@@ -55,10 +71,16 @@ a {
   margin-left: 70px;
 }
 .w-drawer-min {
-  width: auto;
+  width: 70px;
 }
-
+.min-nav-w {
+  width: 70px !important;
+}
 .noAnimation {
   transition: none;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
 }
 </style>
