@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-white w-full py-5 flex fixed top-0">
+    <div class="bg-white w-full py-5 flex fixed top-0 z-20">
       <button @click="switchNav" class="focus:outline-none">
         <div class="ml-5">
           <img src="/icons/menu.svg" alt="" />

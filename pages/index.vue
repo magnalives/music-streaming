@@ -1,26 +1,20 @@
 <template>
-  <div>
-    <div class="bg-gray-300 h-20 mb-3 w-full">Hii</div>
-    <div class="bg-gray-300 h-20 my-3 w-full"></div>
-    <div class="bg-gray-300 h-20 my-3 w-full"></div>
-    <div class="bg-gray-300 h-20 my-3 w-full"></div>
-    <div class="bg-gray-300 h-20 my-3 w-full"></div>
-    <div class="bg-gray-300 h-20 my-3 w-full"></div>
-    <div class="bg-gray-300 h-20 my-3 w-full"></div>
-    <div class="bg-gray-300 h-20 my-3 w-full"></div>
-    <div class="bg-gray-300 h-20 my-3 w-full"></div>
-    <div class="bg-gray-300 h-20 my-3 w-full"></div>
-    <div class="bg-gray-300 h-20 my-3 w-full"></div>
-    <div class="bg-gray-300 h-20 my-3 w-full"></div>
-    <div class="bg-gray-300 h-20 my-3 w-full"></div>
-    <div class="bg-gray-300 h-20 my-3 w-full"></div>
+  <div class="index-page pt-10">
+    <carousel />
   </div>
 </template>
 
 <script>
+import carousel from "~/components/index/carousel.vue";
 export default {
-  components: {}
+  components: {
+    carousel
+  }
 };
 </script>
 
-<style></style>
+<style scoped>
+.index-page {
+  overflow-x: hidden;
+}
+</style>
