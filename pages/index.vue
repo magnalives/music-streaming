@@ -1,6 +1,8 @@
 <template>
-  <div class="index-page pt-10">
-    <carousel />
+  <div class="index-page">
+    <div class="px-5">
+      <carousel />
+    </div>
   </div>
 </template>
 
