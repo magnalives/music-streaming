@@ -50,6 +50,13 @@ export default {
   components: {
     AppNav
   },
+  mounted() {
+    if (window.innerWidth > 900) {
+      this.minNav();
+    } else {
+      this.switchNav();
+    }
+  },
   methods: {
     switchNav() {
       document.getElementById("maincnt").classList.remove("noAnimation");

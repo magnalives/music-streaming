@@ -28,12 +28,12 @@
             v-bind:style="{ backgroundImage: 'url(' + image + ')' }"
           >
             <div
-              class=" w-full flex"
+              class=" w-full flex cursor-pointer"
               @mouseenter="playHover"
               @mouseleave="playHoverOut"
             >
               <img
-                class="m-auto hidden"
+                class="m-auto hidden cursor-pointer"
                 src="/icons/play.svg"
                 alt=""
                 srcset=""
