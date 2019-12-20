@@ -4,15 +4,18 @@
     <div id="maincnt" class="mainCont transition-small bg-light-gray">
       <nuxt />
     </div>
+    <footerPlayey />
   </div>
 </template>
 
 <script>
 import appHead from "~/components/header/appHead.vue";
+import footerPlayey from "~/components/musicplayer/footerplayer.vue";
 
 export default {
   components: {
-    appHead
+    appHead,
+    footerPlayey
   }
 };
 </script>
