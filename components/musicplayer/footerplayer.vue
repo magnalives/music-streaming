@@ -14,7 +14,7 @@
           </div>
         </div>
       </div>
-      <div class="my-auto px-10" style="width: 250px;min-width: 250px;">
+      <div class="my-auto px-5" style="width: 200px;min-width: 200px;">
         <div class="flex">
           <div class=" my-auto">
             <img src="/icons/previous.svg" alt="" srcset="" />
@@ -80,7 +80,7 @@
         <div class="relative w-full">
           <div class="slider-container">
             <div>
-              <span class="bar border-r-0" id="playerbar"> </span>
+              <span class="bar" id="playerbar"> </span>
             </div>
             <input
               class="slider"
@@ -95,26 +95,32 @@
         </div>
         <div class="px-3">3:20</div>
       </div>
-      <!-- <div class="" style="width:250px;min-width: 250px;">
-        <div>
-          <div class="relative w-full">
-            <div class="slider-container">
-              <div>
-                <span class="bar border-r-0" id="playerbar"> </span>
-              </div>
-              <input
-                class="slider"
-                min="0"
-                max="1000"
-                value="0"
-                type="range"
-                @input="audiosliderMove"
-                id="slider"
-              />
+      <div class="flex" style="width:250px;min-width: 250px;">
+        <div class="my-auto mx-3">
+          <img width="40px" src="/icons/volume.svg" alt="" srcset="" />
+        </div>
+        <div class="relative w-full my-auto">
+          <div class="relative flex">
+            <div>
+              <span class="audio-bar w-10"> </span>
             </div>
+            <input
+              class="audio-slider"
+              min="0"
+              max="100"
+              value="0"
+              type="range"
+              @input="audiosliderMove"
+            />
           </div>
         </div>
-      </div> -->
+        <div class="my-auto mx-3">
+          <img width="40px" src="/icons/repeat-one.svg" alt="" srcset="" />
+        </div>
+        <div class="my-auto mx-3">
+          <img width="40px" src="/icons/playlist.svg" alt="" srcset="" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -131,8 +137,15 @@ export default {
     sliderMove() {
       let value = document.getElementById("slider").value;
       let newValue = value / 10;
+      let minValue = newValue - 1;
+      let maxValue = newValue + 1;
       let bar = document.getElementById("playerbar");
       bar.style.width = newValue + "%";
+      if (newValue > 95) {
+        bar.style.width = minValue + "%";
+      } else if (newValue < 5) {
+        bar.style.width = maxValue + "%";
+      }
     },
     audiosliderMove() {}
   }
@@ -144,6 +157,7 @@ export default {
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.17);
   background-color: #f6f7f9;
 }
+/* sider css */
 .slider-container {
   position: relative;
 }
@@ -152,17 +166,17 @@ export default {
 }
 .bar {
   position: absolute;
-  top: 8px;
+  top: 11px;
   background-color: #2263fe;
   background-image: linear-gradient(-90deg, #2163fe 0%, #3131f3 100%);
   box-shadow: 0 0px 15px 0 rgba(49, 84, 206, 0.76);
-  border-radius: 5px;
-  height: 10px;
+  border-radius: 5px 0px 0px 5px;
+  height: 7px;
 }
 .slider-container .slider {
   -webkit-appearance: none;
   width: 100%;
-  height: 10px;
+  height: 7px;
   border-radius: 5px;
   outline: none;
 }
@@ -172,6 +186,36 @@ export default {
   width: 20px;
   height: 20px;
   background-color: #2262fe;
+  border-radius: 50%;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+}
+
+/* audio porfiles */
+.audio-slider {
+  background-color: #d9dfe9;
+}
+.audio-bar {
+  position: absolute;
+  background-color: #040e45;
+  border-radius: 5px 0px 0px 5px;
+  height: 4px;
+}
+.audio-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+  outline: none;
+}
+.audio-slider::-webkit-slider-thumb {
+  position: relative;
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  background-color: #040e45;
   border-radius: 50%;
   -webkit-user-select: none;
   user-select: none;
